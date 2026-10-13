@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>pagewise widget demo</title>
+<link rel="stylesheet" href="../widget/chat.css">
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 60px auto; color: #1f2937; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <h1>Your product page</h1>
+  <p>This page simulates a company's website with the pagewise chat bubble embedded.
+     Click the blue circle in the bottom-right corner and ask a question about
+     whatever document you've uploaded to the server at <code>data-api</code>.</p>
+  <p>Nothing on this page talks to pagewise except the one script tag below &mdash;
+     everything else here is just demo filler text.</p>
+
+  <!-- This is the entire integration a company needs to add: -->
+  <script src="../widget/chat.js" data-api="http://127.0.0.1:8010"></script>
+</body>
+</html>
