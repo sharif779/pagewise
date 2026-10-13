@@ -41,6 +41,21 @@ def test_faq_takes_priority(sample_path):
     assert "money-back" in result.answer
 
 
+def test_unpunctuated_lines_do_not_merge_into_one_answer(tmp_path):
+    doc = tmp_path / "facts.txt"
+    doc.write_text(
+        "Acme is a widget company.\nContact email is info@acme.com\nFounded 2006",
+        encoding="utf-8",
+    )
+    qa = DocQA(mode="bm25")
+    qa.ingest(str(doc))
+
+    result = qa.ask("What is the contact email?")
+    assert result.found
+    assert result.answer == "Contact email is info@acme.com"
+    assert "2006" not in result.answer
+
+
 def test_size_limit_enforced(tmp_path):
     import pytest
 

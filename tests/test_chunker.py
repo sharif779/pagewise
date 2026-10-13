@@ -25,3 +25,15 @@ def test_make_chunks_rejects_bad_window():
 
     with pytest.raises(ValueError):
         make_chunks([(1, "a. b. c.")], window=2, overlap=2)
+
+
+def test_split_sentences_treats_line_breaks_as_boundaries():
+    text = "Contact email is info@acme.com\nFounded 2006"
+    assert split_sentences(text) == ["Contact email is info@acme.com", "Founded 2006"]
+
+
+def test_make_chunks_preserves_individual_sentences():
+    text = "Contact email is info@acme.com\nFounded 2006"
+    chunks = make_chunks([(1, text)], window=4, overlap=1)
+    assert len(chunks) == 1
+    assert chunks[0].sentences == ("Contact email is info@acme.com", "Founded 2006")

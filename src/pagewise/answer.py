@@ -9,7 +9,7 @@ from __future__ import annotations
 from collections import Counter
 from typing import List, Optional
 
-from .chunker import Chunk, split_sentences
+from .chunker import Chunk
 from .retrievers.bm25 import tokenize
 
 
@@ -41,7 +41,7 @@ def best_sentence(
     """
     sentence_pages = []
     for chunk in candidate_chunks:
-        for sentence in split_sentences(chunk.text):
+        for sentence in chunk.sentences:
             sentence_pages.append((sentence, chunk.page))
 
     if not sentence_pages:

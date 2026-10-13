@@ -5,7 +5,7 @@ from __future__ import annotations
 import pickle
 from pathlib import Path
 
-FORMAT_VERSION = 1
+FORMAT_VERSION = 2
 
 
 def save_index(path: str, data: dict) -> None:

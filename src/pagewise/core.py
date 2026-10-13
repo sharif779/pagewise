@@ -141,7 +141,7 @@ class DocQA:
                 "mode": self.mode,
                 "embedding_model": self.embedding_model,
                 "source_file": self.source_file,
-                "chunks": [(c.chunk_id, c.text, c.page) for c in self.chunks],
+                "chunks": [(c.chunk_id, c.text, c.page, c.sentences) for c in self.chunks],
                 "retriever_state": self.retriever.state(),
                 "faq_state": self.faq.state(),
             },
@@ -152,7 +152,10 @@ class DocQA:
         data = load_index(path)
         qa = cls(mode=data["mode"], embedding_model=data["embedding_model"])
         qa.source_file = data["source_file"]
-        qa.chunks = [Chunk(chunk_id=cid, text=text, page=page) for cid, text, page in data["chunks"]]
+        qa.chunks = [
+            Chunk(chunk_id=cid, text=text, page=page, sentences=sentences)
+            for cid, text, page, sentences in data["chunks"]
+        ]
         qa.retriever.load_state(data["retriever_state"])
         qa.faq.load_state(data["faq_state"])
         return qa
