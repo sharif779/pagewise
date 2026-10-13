@@ -87,4 +87,10 @@ def create_app(index_path: str = "pagewise_index.pkl", max_mb: float = 5.0) -> F
         result = state["qa"].ask(payload.question, k=payload.k, threshold=payload.threshold)
         return result.to_dict()
 
+    @app.delete("/document")
+    def delete_document():
+        state["qa"] = None
+        Path(index_path).unlink(missing_ok=True)
+        return {"status": "ok", "ready": False}
+
     return app

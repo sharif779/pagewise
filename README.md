@@ -85,10 +85,13 @@ curl -F "file=@product_guide.pdf" http://localhost:8000/upload
 curl -X POST http://localhost:8000/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "How much does the Pro plan cost?"}'
+curl -X DELETE http://localhost:8000/document  # clears the uploaded document and its index file
 ```
 
-The server is single-tenant by default (one document at a time). For multiple
-tenants, run one process per tenant with its own `--index` path.
+The server is single-tenant by default (one document at a time). Uploading a
+new file replaces whatever was indexed before; `DELETE /document` clears it
+without uploading a replacement. For multiple tenants, run one process per
+tenant with its own `--index` path.
 
 ## Embed the chat widget
 
