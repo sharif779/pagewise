@@ -1,0 +1,90 @@
+.pagewise-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  z-index: 999999;
+}
+
+.pagewise-panel {
+  position: fixed;
+  bottom: 86px;
+  right: 20px;
+  width: 320px;
+  max-height: 460px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  z-index: 999999;
+}
+
+.pagewise-panel.pagewise-open {
+  display: flex;
+}
+
+.pagewise-header {
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pagewise-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  font-size: 13px;
+  color: #1f2937;
+}
+
+.pagewise-msg {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.pagewise-msg.pagewise-user {
+  text-align: right;
+  color: #2563eb;
+}
+
+.pagewise-msg .pagewise-page {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.pagewise-inputrow {
+  display: flex;
+  border-top: 1px solid #e5e7eb;
+}
+
+.pagewise-inputrow input {
+  flex: 1;
+  border: none;
+  padding: 10px 12px;
+  font-size: 13px;
+  outline: none;
+}
+
+.pagewise-inputrow button {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 13px;
+}

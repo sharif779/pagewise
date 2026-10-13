@@ -1,0 +1,11 @@
+Acme Widgets Product Overview
+
+Acme Widgets is a cloud-based inventory management platform for small retailers. It helps store owners track stock levels, reorder products automatically, and sync inventory across multiple sales channels.
+
+Pricing starts at $10 per month for the Starter plan, which supports up to 500 products. The Pro plan costs $29 per month and supports unlimited products plus barcode scanning. Enterprise pricing is available on request for teams with more than ten warehouse locations.
+
+Acme Widgets integrates with Shopify, WooCommerce, and Square out of the box. Setup usually takes less than fifteen minutes, and no credit card is required for the 14-day free trial.
+
+Customer support is available via email and live chat, Monday through Friday, 9am to 6pm Eastern Time. Enterprise customers also get a dedicated account manager and 24/7 phone support.
+
+Data is encrypted at rest and in transit, and Acme Widgets is SOC 2 Type II certified. Backups run every six hours and are retained for 30 days.
